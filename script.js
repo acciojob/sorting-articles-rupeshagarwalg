@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const bands = [
   'The Plot in You',
   'The Devil Wears Prada',
@@ -15,26 +14,21 @@ const bands = [
   'An Old Dog'
 ];
 
-// Function to remove leading 'a', 'an', 'the'
 function stripArticle(name) {
   return name.replace(/^(a |an |the )/i, '').trim();
 }
 
-// Sort alphabetically ignoring 'a', 'an', 'the'
 const sortedBands = bands.sort((a, b) =>
   stripArticle(a).localeCompare(stripArticle(b))
 );
 
-// Create the unordered list
 const ul = document.createElement('ul');
-ul.id = 'band';
+ul.id = 'bands'; // ✅ Corrected ID
 
-// Add sorted items
 sortedBands.forEach(band => {
   const li = document.createElement('li');
   li.textContent = band;
   ul.appendChild(li);
 });
 
-// Append to body
 document.body.appendChild(ul);
